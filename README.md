@@ -34,6 +34,8 @@ I wanted to focus my testing on Windows and macOS for two reasons: (1) none of m
 I ship data in packages that are not available on CRAN (and in some cases may never be). Setting-up the testing meant that I needed to be able to make this happen remotely as well.
 
 ## Implementation
+After a ton of trial and error (including way too much of my Sunday evening devoted to getting `sf` to install on Linux, which was ultimately unsuccessful), I have a working implementation that hits all of the high points that I want to include in continuous integration for teaching code.
+
 ### Using a `DESCRIPTION` File
 I added a `DESCRIPTION` file to my test repository following [Hadley Wickham's advice](https://github.com/travis-ci/travis-ci/issues/5913). I took out a number of the pieces that were specific to `R` packages. The key part here is to specify the packages that I will be teaching with for a given lecture. This serves as a way to instruct both Travis and Appveyor to install the needed packages. My `DESCRIPTION` file ensures that `knitr`, `rmarkdown`, and `sf` are all dependencies for this test lecture.
 
