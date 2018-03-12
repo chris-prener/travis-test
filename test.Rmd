@@ -21,6 +21,6 @@ test <- mpg
 ```
 
 ```{r}
-men(test$hwy)
+mean(test$hwy)
 ```
 
