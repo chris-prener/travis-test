@@ -1,14 +1,12 @@
-Title: SLU SOC 4015 and SOC 5050 - Lecture-01
-Version: 18.1.0.9000
+Title: Test Repo
+Version: 0.1.0.9000
 Authors@R: person("Christopher", "Prener", email = "chris.prener@slu.edu",
                   role = c("aut", "cre"))
 Description: This is a test
 Depends: R (>= 3.3)
 License: GPL-3 + file LICENSE
 Encoding: UTF-8
-LazyData: true
-URL: https://github.com/slu-soc5050/lecture-01
-BugReports: https://github.com/slu-soc5050/lecture-01/issues
-RoxygenNote: 6.0.1
+URL: https://github.com/chris-prener/travis-test
+BugReports: https://github.com/chris-prener/travis-test/issues
 Imports: rmarkdown,
   sf

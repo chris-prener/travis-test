@@ -5,11 +5,8 @@ cache: false
 os:
   - osx
 
-# addons:
-#  postgresql: 9.6
-
-r_packages:
-  - devtools
+# r_packages:
+#  - devtools
 
 r_github_packages:
   - chris-prener/stlData
@@ -18,9 +15,4 @@ r_github_packages:
 script:
   - R -e "rmarkdown::render('tests/test.Rmd')"
   - R -e "rmarkdown::render('tests/testMap.Rmd')"
-  
-# after_success:
-#  - dropdb postgis
-#  - createdb postgis
-#  - psql -d postgis -c "CREATE EXTENSION postgis;"
-#  - psql -d postgis -c "GRANT CREATE ON DATABASE postgis TO travis"
+ 
