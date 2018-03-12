@@ -1,12 +1,12 @@
 language: r
-sudo: required
-cache: packages
+sudo: false
+cache: false
 
 os:
   - osx
 
-addons:
-  postgresql: 9.6
+# addons:
+#  postgresql: 9.6
 
 r_packages:
   - devtools
@@ -19,8 +19,8 @@ script:
   - R -e "rmarkdown::render('tests/test.Rmd')"
   - R -e "rmarkdown::render('tests/testMap.Rmd')"
   
-after_success:
-  - dropdb postgis
-  - createdb postgis
-  - psql -d postgis -c "CREATE EXTENSION postgis;"
-  - psql -d postgis -c "GRANT CREATE ON DATABASE postgis TO travis"
+# after_success:
+#  - dropdb postgis
+#  - createdb postgis
+#  - psql -d postgis -c "CREATE EXTENSION postgis;"
+#  - psql -d postgis -c "GRANT CREATE ON DATABASE postgis TO travis"
