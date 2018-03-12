@@ -1,0 +1,6 @@
+language: r
+sudo: false
+cache: packages
+
+script:
+  - R -e "rmarkdown::render('test.Rmd')"

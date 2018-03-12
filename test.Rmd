@@ -1,0 +1,26 @@
+---
+title: "Test Document"
+author: "Christopher Prener, Ph.D."
+date: '(`r format(Sys.time(), "%B %d, %Y")`)'
+output: 
+  github_document: default
+  html_notebook: default 
+---
+
+## Introduction
+This is the replication notebook for Lab-04 from the course SOC 4650/5650: Introduction to GISc. 
+
+## Dependencies
+
+```{r}
+library(ggplot2)
+```
+
+```{r}
+test <- mpg
+```
+
+```{r}
+mean(test$hwy)
+```
+
