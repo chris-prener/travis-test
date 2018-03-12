@@ -15,6 +15,20 @@ cache:
 
 # Adapt as necessary starting from here
 
+# begin pandoc fix via https://github.com/krlmlr/r-appveyor/issues/82
+cache:
+  - C:\RLibrary
+  - C:\Program Files (x86)\Pandoc\
+
+before_test:
+  - ps: >-
+      if (-Not (Test-Path "C:\Program Files (x86)\Pandoc\")) {
+        cinst pandoc
+      }
+  - ps: $env:Path += ";C:\Program Files (x86)\Pandoc\"
+  - pandoc -v
+# end pandoc fix
+
 environment:
   global:
     WARNINGS_ARE_ERRORS: 1
