@@ -7,3 +7,4 @@ r_github_packages:
 
 script:
   - R -e "rmarkdown::render('tests/test.Rmd')"
+  - R -e "rmarkdown::render('tests/testMap.Rmd')"
