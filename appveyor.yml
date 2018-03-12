@@ -13,9 +13,9 @@ install:
 # Adapt as necessary starting from here
 
 # begin pandoc fix via https://github.com/krlmlr/r-appveyor/issues/82
-cache:
-  - C:\RLibrary
-  - C:\Program Files (x86)\Pandoc\
+# cache:
+#  - C:\RLibrary
+#  - C:\Program Files (x86)\Pandoc\
 
 before_test:
   - ps: >-
