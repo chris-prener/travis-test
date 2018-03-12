@@ -10,5 +10,4 @@ LazyData: true
 URL: https://github.com/slu-soc5050/lecture-01
 BugReports: https://github.com/slu-soc5050/lecture-01/issues
 RoxygenNote: 6.0.1
-Imports: ggplot2,
-    rmarkdown
+Imports: rmarkdown
