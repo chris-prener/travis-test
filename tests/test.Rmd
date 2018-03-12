@@ -12,15 +12,15 @@ This is the replication notebook for Lab-04 from the course SOC 4650/5650: Intro
 
 ## Dependencies
 
-```{r}
+```{r load-pkgs}
 library(ggplot2)
 ```
 
-```{r}
+```{r load-data}
 test <- mpg
 ```
 
-```{r}
+```{r get-mean}
 mean(test$hwy)
 ```
 

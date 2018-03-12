@@ -12,17 +12,17 @@ This is the replication notebook for Lab-04 from the course SOC 4650/5650: Intro
 
 ## Dependencies
 
-```{r}
+```{r load-pkgs}
 library(ggplot2)
 library(stlData)
 library(sf)
 ```
 
-```{r}
+```{r load-data}
 test <- stl_sf_boundary
 ```
 
-```{r}
+```{r build-map}
 ggplot() +
   geom_sf(data = test, fill = "#5d5d5d", color = "#5d5d5d")
 ```
