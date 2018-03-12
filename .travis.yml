@@ -2,11 +2,11 @@ language: r
 sudo: required
 cache: packages
 
+os:
+  - osx
+
 addons:
   postgresql: 9.6
-  apt:
-    packages:
-    - postgresql-9.6-postgis-2.3
 
 r_packages:
   - devtools
@@ -14,10 +14,6 @@ r_packages:
 r_github_packages:
   - chris-prener/stlData
   - tidyverse/ggplot2
-
-before_install:
-    - chmod +x ./.travis/install.sh
-    - ./.travis/install.sh
 
 script:
   - R -e "rmarkdown::render('tests/test.Rmd')"
