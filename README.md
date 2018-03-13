@@ -39,6 +39,18 @@ After a ton of trial and error (including way too much of my Sunday evening devo
 ### Using a `DESCRIPTION` File
 I added a `DESCRIPTION` file to my test repository following [Hadley Wickham's advice](https://github.com/travis-ci/travis-ci/issues/5913). I took out a number of the pieces that were specific to `R` packages. The key part here is to specify the packages that I will be teaching with for a given lecture. This serves as a way to instruct both Travis and Appveyor to install the needed packages. My `DESCRIPTION` file ensures that `knitr`, `rmarkdown`, and `sf` are all dependencies for this test lecture.
 
+I also use the description file's `Remotes` section to note that I need two packages installed directly from GitHub: the development version of `ggplot2` (to access `geom_sf()` for my GIS course) and my data package `stlData`. These need to be included both as `Remotes` as well as packages that should be imported. The final `DESCRIPTION` file therefore looks like this:
+
+```
+Remotes: chris-prener/stlData,
+  tidyverse/ggplot2
+Imports: ggplot2,
+  knitr,
+  rmarkdown,
+  sf,
+  stlData
+```
+
 ### Travis-CI
 For Travis, I disabled caching to force my builds to re-download software each time. This slows down the process but ensures that I am able to catch any installation errors each and every time I build a lesson's code. I also specified that builds only run on macOS, and that they run on both the old release and current release of `R`. The top of my `.travis.yml` file therefore looks like this:
 
@@ -55,17 +67,7 @@ os:
   - osx
 ```
 
-To install packages from GitHub, I included the following in my `.travis.yml`:
-
-```yml
-r_github_packages:
-  - chris-prener/stlData
-  - tidyverse/ggplot2
-```
-
-I am installing the dev version of `ggplot2` since my Intro to GIS course uses it for `geom_sf()`, and I am installing one of my own data packages that I use for examples in class.
-
-Finally, to test my scripts, I include the following in my `.travis.yml`:
+To test my scripts, I include the following in my `.travis.yml`:
 
 ```yml
 script:
@@ -110,13 +112,11 @@ environment:
     - R_VERSION: oldrel
 ```
 
-To install both the dependencies and the two packages from GitHub, I include the following in `appveyor.yml`:
+To install both the dependencies as well as the specified remotes from GitHub, I include the following in `appveyor.yml`:
 
 ```yml
 build_script:
   - travis-tool.sh install_deps
-  - travis-tool.sh install_github chris-prener/stlData
-  - travis-tool.sh install_github tidyverse/ggplot2
 ```
 
 And finally, to test my scripts, I replace the default package testing with the following:
