@@ -1,3 +1,4 @@
+Package: travis-test
 Title: Test Repo
 Version: 0.1.0.9000
 Authors@R: person("Christopher", "Prener", email = "chris.prener@slu.edu",
