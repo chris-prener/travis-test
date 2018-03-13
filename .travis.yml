@@ -9,9 +9,9 @@ r:
 os:
   - osx
 
-r_github_packages:
-  - chris-prener/stlData
-  - tidyverse/ggplot2
+# r_github_packages:
+  # - chris-prener/stlData
+  # - tidyverse/ggplot2
 
 script:
   - R -e "rmarkdown::render('tests/test.Rmd')"
